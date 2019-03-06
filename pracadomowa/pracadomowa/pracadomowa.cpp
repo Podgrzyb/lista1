@@ -16,7 +16,8 @@ int main()
 {
 	Stos stosik;
 	stosik.push(2);
-	stosik.push(2);
+	stosik.push(3);
+	cout << "liczba na gorze stosu:"<<stosik.top();
 	
 	/*
 	//stos
