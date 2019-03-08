@@ -10,13 +10,38 @@
 #include <ctime>
 #include "Stos.h"
 #include "Kolejka.h"
+#include "List1d.h"
+#include "DoublyLinkedList.h"
 using namespace std;
 
 
 int main()
 {
+	DoublyLinkedList lista;
+	lista.pushback(3);
+	lista.pushback(2);
+	lista.pushfront(4);
+	lista.popback();
+	lista.popfront();
 
+
+	cout << "poczatek listy:" << lista.front() << endl;
+	cout << "koniec listy:" << lista.back() << endl;
+	cout << "dlugosc listy wynosi:" << lista.size();
 	/*
+	List1d lista;
+	lista.pushback(3);
+	lista.pushback(2);
+	lista.pushfront(4);
+	lista.popback();
+	lista.popfront();
+
+	
+	cout << "poczatek listy:" << lista.front()<<endl;
+	cout << "koniec listy:" << lista.back() << endl;
+	cout << "dlugosc listy wynosi:" << lista.size();
+	
+	
 	Kolejka queue1;
 	queue1.push(2);
 	queue1.push(3);

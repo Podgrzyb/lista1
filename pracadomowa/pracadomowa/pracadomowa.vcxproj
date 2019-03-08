@@ -151,12 +151,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DoubleNode.h" />
+    <ClInclude Include="DoublyLinkedList.h" />
     <ClInclude Include="Kolejka.h" />
+    <ClInclude Include="List1d.h" />
+    <ClInclude Include="Nodle.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Stos.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DoubleNode.cpp" />
+    <ClCompile Include="DoublyLinkedList.cpp" />
     <ClCompile Include="Kolejka.cpp" />
+    <ClCompile Include="List1d.cpp" />
+    <ClCompile Include="Nodle.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
