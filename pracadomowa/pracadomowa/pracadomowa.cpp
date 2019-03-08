@@ -9,17 +9,44 @@
 #include <cstdlib>
 #include <ctime>
 #include "Stos.h"
+#include "Kolejka.h"
 using namespace std;
 
 
 int main()
 {
+
+	/*
+	Kolejka queue1;
+	queue1.push(2);
+	queue1.push(3);
+	queue1.push(6);
+	if (queue1.isempty())
+	{
+		cout << "stos jest pusty" << endl;
+	}
+	else
+	{
+		queue1.pop();
+	}
+	cout << "pierwsza liczba w kolejce:" << queue1.front() << endl;
+	cout << "Ilosc elementow na stosie:" << queue1.size() << endl;
+	
 	Stos stosik;
 	stosik.push(2);
 	stosik.push(3);
-	cout << "liczba na gorze stosu:"<<stosik.top();
+	stosik.push(6);
+	if (stosik.isempty())
+	{
+		cout << "stos jest pusty" << endl;
+	}
+	else
+	{
+		stosik.pop();
+	}
+	cout << "liczba na gorze stosu:"<<stosik.top()<<endl;
+	cout << "Ilosc elementow na stosie:" << stosik.size()<<endl;
 	
-	/*
 	//stos
 	srand(time(NULL));
 	stack<int> stos;

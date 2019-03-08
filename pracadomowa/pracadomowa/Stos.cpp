@@ -28,15 +28,10 @@ void Stos::push(int element)
 	tab = tab2;
 	
 }
-/*
+
 void Stos::pop()
 {
-	if (tab = nullptr)
-	{
-		cout << "stos jest pusty" << endl;
-	}
-	else
-	{
+	
 		index--;
 		tab2 = new int[index+1];
 		for (int i = 0; i < index+1 ; i++)
@@ -45,17 +40,23 @@ void Stos::pop()
 		}
 		delete[] tab;
 		tab = tab2;
-	}
+	
 
 }
-*/
+
 bool Stos::isempty()
 {
-	if (tab = nullptr)
+	if (tab == nullptr)
 		return true;
+	else return false;
 }
 
 int Stos::top()
 {
-	return tab[index];
+	return tab[index-1];
+}
+
+int Stos::size()
+{
+	return index;
 }
