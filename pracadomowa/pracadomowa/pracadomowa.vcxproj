@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="DoubleNode.h" />
     <ClInclude Include="DoublyLinkedList.h" />
+    <ClInclude Include="Heap.h" />
     <ClInclude Include="Kolejka.h" />
     <ClInclude Include="List1d.h" />
     <ClInclude Include="Nodle.h" />
@@ -162,6 +163,7 @@
   <ItemGroup>
     <ClCompile Include="DoubleNode.cpp" />
     <ClCompile Include="DoublyLinkedList.cpp" />
+    <ClCompile Include="Heap.cpp" />
     <ClCompile Include="Kolejka.cpp" />
     <ClCompile Include="List1d.cpp" />
     <ClCompile Include="Nodle.cpp" />

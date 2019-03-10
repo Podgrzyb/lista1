@@ -12,11 +12,25 @@
 #include "Kolejka.h"
 #include "List1d.h"
 #include "DoublyLinkedList.h"
+#include "Heap.h"
 using namespace std;
 
 
 int main()
 {
+	Heap kopiec(8);
+	kopiec.add(3);
+	kopiec.add(5);
+	kopiec.add(10);
+	kopiec.add(1);
+	kopiec.add(2);
+	kopiec.add(30);
+	kopiec.add(20);
+	kopiec.add(4);
+	kopiec.display();
+	
+	
+	/*
 	DoublyLinkedList lista;
 	lista.pushback(3);
 	lista.pushback(2);
@@ -28,7 +42,7 @@ int main()
 	cout << "poczatek listy:" << lista.front() << endl;
 	cout << "koniec listy:" << lista.back() << endl;
 	cout << "dlugosc listy wynosi:" << lista.size();
-	/*
+	
 	List1d lista;
 	lista.pushback(3);
 	lista.pushback(2);
