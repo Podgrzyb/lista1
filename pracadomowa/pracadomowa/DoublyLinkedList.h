@@ -17,5 +17,7 @@ public:
 	int size();
 	int front();
 	int back();
+	void clear();
+	void display();
 };
 

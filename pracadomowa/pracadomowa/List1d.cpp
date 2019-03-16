@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "List1d.h"
-
+#include <iostream>
+using namespace std;
 
 
 List1d::List1d()
@@ -72,9 +73,16 @@ void List1d::popfront()
 {
 	length--;
 	Nodle *temp=new Nodle;
-	temp = head;
-	head = head->next;
-	delete temp;
+	if (head == nullptr)
+	{
+		cout << "Lista jest pusta" << endl;
+	}
+	else
+	{
+		temp = head;
+		head = head->next;
+		delete temp;
+	}
 }
 
 bool List1d::isempty()
@@ -92,12 +100,49 @@ int List1d::size()
 
 int List1d::front()
 {
+	if (head == nullptr)
+	{
+		cout << "Lista jest pusta" << endl;
+	}
+	else
 	return head->liczba;
 }
 
 int List1d::back()
 {
 	return tail->liczba;
+}
+
+void List1d::clear()
+{
+	
+	Nodle *current = new Nodle;
+	Nodle *previous = new Nodle;
+	current = head;
+	while (current->next != nullptr)
+	{
+		current = current->next;
+		delete previous;
+		previous = current;
+		length--;
+	}
+	current->next = nullptr;
+	delete current;
+	head = nullptr;
+	tail = nullptr;
+	length--;
+	
+}
+
+void List1d::display()
+{
+	Nodle *temp = new Nodle;
+	temp = head;
+	while (temp != nullptr)
+	{
+		cout << temp->liczba << endl;
+		temp = temp->next;
+	}
 }
 
 

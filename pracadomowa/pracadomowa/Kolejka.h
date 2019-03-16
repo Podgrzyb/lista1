@@ -14,5 +14,6 @@ public:
 	int size();
 	bool isempty();
 	int front();
+	
 };
 

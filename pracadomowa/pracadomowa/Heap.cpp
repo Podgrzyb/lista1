@@ -91,4 +91,5 @@ void Heap::display()
 	cout << "elementy kopca:";
 	for (int i = 0; i < size; i++)
 		cout << tab[i] << " ";
+	cout << endl;
 }

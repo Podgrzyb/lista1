@@ -18,85 +18,18 @@ using namespace std;
 
 int main()
 {
-	Heap kopiec(8);
-	kopiec.add(3);
-	kopiec.add(5);
-	kopiec.add(10);
-	kopiec.add(1);
-	kopiec.add(2);
-	kopiec.add(30);
-	kopiec.add(20);
-	kopiec.add(4);
-	kopiec.display();
-	
-	
-	/*
-	DoublyLinkedList lista;
-	lista.pushback(3);
-	lista.pushback(2);
-	lista.pushfront(4);
-	lista.popback();
-	lista.popfront();
 
-
-	cout << "poczatek listy:" << lista.front() << endl;
-	cout << "koniec listy:" << lista.back() << endl;
-	cout << "dlugosc listy wynosi:" << lista.size();
-	
-	List1d lista;
-	lista.pushback(3);
-	lista.pushback(2);
-	lista.pushfront(4);
-	lista.popback();
-	lista.popfront();
-
-	
-	cout << "poczatek listy:" << lista.front()<<endl;
-	cout << "koniec listy:" << lista.back() << endl;
-	cout << "dlugosc listy wynosi:" << lista.size();
-	
-	
-	Kolejka queue1;
-	queue1.push(2);
-	queue1.push(3);
-	queue1.push(6);
-	if (queue1.isempty())
-	{
-		cout << "stos jest pusty" << endl;
-	}
-	else
-	{
-		queue1.pop();
-	}
-	cout << "pierwsza liczba w kolejce:" << queue1.front() << endl;
-	cout << "Ilosc elementow na stosie:" << queue1.size() << endl;
-	
-	Stos stosik;
-	stosik.push(2);
-	stosik.push(3);
-	stosik.push(6);
-	if (stosik.isempty())
-	{
-		cout << "stos jest pusty" << endl;
-	}
-	else
-	{
-		stosik.pop();
-	}
-	cout << "liczba na gorze stosu:"<<stosik.top()<<endl;
-	cout << "Ilosc elementow na stosie:" << stosik.size()<<endl;
-	
 	//stos
+	cout << "Stos z biblioteki STL" << endl;
 	srand(time(NULL));
 	stack<int> stos;
-	int m=5,liczba;
+	int m = 12, liczba, k = 8, l = 4, j = 2;
 	for (int i = 0; i < m; i++)
 	{
 		liczba = rand() % 50;
 		stos.push(liczba);
 	}
 	cout << "Ostatnia liczba na stosie to:" << stos.top() << endl;
-	int k = 3;
 	for (int i = 0; i < k; i++)
 	{
 		if (stos.empty())
@@ -111,16 +44,17 @@ int main()
 	stos.push(3);
 	cout << "Liczba elementow stosu wynosi:" << stos.size() << endl;
 
-    //kolejka
+	//kolejka
+	cout << "Kolejka z biblioteki STL" << endl;
 	queue<int> kolejka;
-	
+
 	for (int i = 0; i < m; i++)
 	{
 		liczba = rand() % 50;
 		kolejka.push(liczba);
 	}
 	cout << "pierwszy element kolejki to:" << kolejka.front() << endl;
-	
+
 	for (int i = 0; i < k; i++)
 	{
 		if (kolejka.empty())
@@ -141,6 +75,7 @@ int main()
 	cout << "Liczba elementow kolejki wynosi:" << kolejka.size() << endl;
 
 	//lista
+	cout << "lista z biblioteki STL" << endl;
 	list<int> lista;
 
 	for (int i = 0; i < m; i++)
@@ -148,8 +83,8 @@ int main()
 		liczba = rand() % 50;
 		lista.push_back(liczba);
 	}
-	
-	for(int n:lista)
+
+	for (int n : lista)
 	{
 		cout << "element listy:" << n << endl;
 	}
@@ -158,15 +93,15 @@ int main()
 		liczba = rand() % 50;
 		lista.push_front(liczba);
 	}
-	int l = 4;
+
 	for (int i = 0; i < l; i++)
 	{
-		if(!lista.empty())
-		lista.pop_front();
+		if (!lista.empty())
+			lista.pop_front();
 		else cout << "Lista jest pusta" << endl;
 	}
 	cout << "Pierwszy element listy:" << lista.front() << endl;
-	int j = 2;
+
 	for (int i = 0; i < j; i++)
 	{
 		if (!lista.empty())
@@ -180,9 +115,144 @@ int main()
 	}
 	lista.clear();
 	cout << "Liczba elementow listy:" << lista.size() << endl;
-	*/
-}
+	//stos zaimplementowany
+	cout << "stos zaimplementowany" << endl;
+	Stos stos1;
 
+	for (int i = 0; i < m; i++)
+	{
+		liczba = rand() % 50;
+		stos1.push(liczba);
+	}
+	cout << "Ostatnia liczba na stosie to:" << stos1.top() << endl;
+
+	for (int i = 0; i < k; i++)
+	{
+		if (stos1.isempty())
+		{
+			cout << "stos jest pusty" << endl;
+		}
+		else
+		{
+			stos1.pop();
+		}
+	}
+	stos.push(3);
+	cout << "Liczba elementow stosu wynosi:" << stos1.size() << endl;
+
+	//kolejka zaimplementowana
+	cout << "kolejka zaimplementowana" << endl;
+	Kolejka kolejka1;
+
+	for (int i = 0; i < m; i++)
+	{
+		liczba = rand() % 50;
+		kolejka1.push(liczba);
+	}
+	cout << "pierwszy element kolejki to:" << kolejka1.front() << endl;
+
+	for (int i = 0; i < k; i++)
+	{
+		if (kolejka1.isempty())
+		{
+			cout << "kolejka jest pusta" << endl;
+		}
+		else
+		{
+			kolejka1.pop();
+		}
+	}
+	for (int i = 0; i < m; i++)
+	{
+		liczba = rand() % 50;
+		kolejka1.push(liczba);
+	}
+	cout << "pierwszy element kolejki to:" << kolejka1.front() << endl;
+	cout << "Liczba elementow kolejki wynosi:" << kolejka1.size() << endl;
+
+	//lista jednokierunkowa
+	cout << "lista jednokierunkowa zaimplementowana" << endl;
+
+	List1d lista1;
+
+	for (int i = 0; i < m; i++)
+	{
+		liczba = rand() % 50;
+		lista1.pushback(liczba);
+	}
+	lista1.display();
+	for (int i = 0; i < k; i++)
+	{
+		liczba = rand() % 50;
+		lista1.pushfront(liczba);
+	}
+
+	for (int i = 0; i < l; i++)
+	{
+		lista1.popfront();
+	}
+	cout << "Pierwszy element listy:" << lista1.front() << endl;
+
+	for (int i = 0; i < j; i++)
+	{
+		lista1.popback();
+	}
+	cout << "Ostatni element listy:" << lista1.back() << endl;
+
+	lista1.display();
+	lista1.clear();
+
+	cout << "Liczba elementow listy:" << lista1.size() << endl;
+
+	//lista dwukierunkowa
+
+	cout << "lista dwukierunkowa zaimplementowana" << endl;
+
+	DoublyLinkedList lista2;
+	for (int i = 0; i < m; i++)
+	{
+		liczba = rand() % 50;
+		lista2.pushback(liczba);
+	}
+	lista2.display();
+	for (int i = 0; i < k; i++)
+	{
+		liczba = rand() % 50;
+		lista2.pushfront(liczba);
+	}
+
+	for (int i = 0; i < l; i++)
+	{
+		lista2.popfront();
+	}
+	cout << "Pierwszy element listy:" << lista2.front() << endl;
+
+	for (int i = 0; i < j; i++)
+	{
+		lista2.popback();
+	}
+	cout << "Ostatni element listy:" << lista2.back() << endl;
+
+	lista2.display();
+	lista2.clear();
+
+	cout << "Liczba elementow listy:" << lista2.size() << endl;
+
+	cout << "Kopiec" << endl;
+	int x = 8;
+	Heap kopiec(10);
+	for (int i = 0; i < x; i++)
+	{
+		liczba = rand() % 50;
+		kopiec.add(liczba);
+	}
+	kopiec.display();
+	kopiec.RemoveRoot();
+	kopiec.display();
+	
+	
+
+}
 
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania

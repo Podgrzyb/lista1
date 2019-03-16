@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "DoublyLinkedList.h"
-
+#include <iostream>
+using namespace std;
 
 DoublyLinkedList::DoublyLinkedList()
 {
@@ -40,6 +41,7 @@ void DoublyLinkedList::popback()
 	DoubleNode *temp = new DoubleNode;
 	temp = tail;
 	tail = tail->prev;
+	tail->next = nullptr;
 	delete temp;
 }
 
@@ -94,4 +96,33 @@ int DoublyLinkedList::front()
 int DoublyLinkedList::back()
 {
 	return tail->liczba;
+}
+
+void DoublyLinkedList::clear()
+{
+	
+	DoubleNode *temp = new DoubleNode;
+	while (head != tail)
+	{
+		temp = head;
+		head = head->next;
+		head->prev = nullptr;
+		delete temp;
+		length--;
+	}
+	length--;
+	delete head;
+	
+	
+}
+
+void DoublyLinkedList::display()
+{
+	DoubleNode *temp = new DoubleNode;
+	temp = head;
+	while (temp != nullptr)
+	{
+		cout << temp->liczba << endl;
+		temp = temp->next;
+	}
 }

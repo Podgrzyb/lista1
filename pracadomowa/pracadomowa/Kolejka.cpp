@@ -56,3 +56,5 @@ int Kolejka::front()
 {
 	return tab[0];
 }
+
+
