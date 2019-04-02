@@ -1,2 +1,2 @@
-# lista1
+# lista1STL
 stosy itp
