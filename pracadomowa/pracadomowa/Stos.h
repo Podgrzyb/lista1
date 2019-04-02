@@ -3,13 +3,13 @@ class Stos
 {
 private:
 	int *tab;
-	int *tab2;
+	int SizeOfStack;
 	int index;
 public:
 	Stos();
 	~Stos();
 	void push(int element);
-	void pop();
+	int pop();
 	int top();
 	int size();
 	bool isempty();

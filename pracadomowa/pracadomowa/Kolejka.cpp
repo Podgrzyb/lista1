@@ -1,12 +1,15 @@
 #include "pch.h"
 #include "Kolejka.h"
-
+#include <iostream>
+using namespace std;
 
 Kolejka::Kolejka()
 {
-	tab = new int[1];
-	index = 0;
-	
+	capacity = 50;
+	tab = new int[50];
+	f = 0;
+	r = 0;
+	currentSize = 0;
 }
 
 
@@ -16,33 +19,58 @@ Kolejka::~Kolejka()
 
 void Kolejka::push(int element)
 {
-	tab[index] = element;
-	index++;
-	tab2 = new int[index + 1];
-	for (int i = 0; i < index + 1; i++)
+	if (currentSize == capacity)
 	{
-		tab2[i] = tab[i];
+		cout << "Kolejka jest pelna" << endl;
 	}
-	delete[] tab;
-	tab = tab2;
+	else
+	{
+		if (r == (capacity - 1))
+		{
+
+
+			r = 0;
+			tab[r] = element;
+			currentSize++;
+		}
+		else
+		{
+			tab[r] = element;
+			r = (r + 1) % capacity;
+			currentSize++;
+
+		}
+	}
 }
 
-void Kolejka::pop()
+int Kolejka::pop()
 {
-
-	index--;
-	tab2 = new int[index + 1];
-	for (int i = 0; i < index + 1; i++)
+	int temp;
+	if (isempty())
 	{
-		tab2[i] = tab[i+1];
+		cout << "Kolejka jest pusta" << endl;
 	}
-	delete[] tab;
-	tab = tab2;
-
+	else
+	{
+		if (f == (capacity - 1))
+		{
+			temp = tab[f];
+			f = 0;
+			currentSize--;
+			return temp;
+		}
+		else
+		{
+			temp = tab[f];
+			f = (f + 1) % capacity;
+			currentSize--;
+			return temp;
+		}
+	}
 }
 bool Kolejka::isempty()
 {
-	if (tab == nullptr)
+	if (f==r)
 		return true;
 	else return false;
 }
@@ -50,11 +78,11 @@ bool Kolejka::isempty()
 
 int Kolejka::size()
 {
-	return index;
+	return currentSize;
 }
 int Kolejka::front()
 {
-	return tab[0];
+	return tab[f];
 }
 
 

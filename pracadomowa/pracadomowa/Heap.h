@@ -15,5 +15,6 @@ public:
 	void Heapify(int i);
 	int RemoveRoot();
 	void display();
+
 };
 

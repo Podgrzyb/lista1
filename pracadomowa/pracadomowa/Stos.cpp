@@ -6,7 +6,8 @@ using namespace std;
 
 Stos::Stos()
 {
-	tab = new int[1];
+	SizeOfStack = 50;
+	tab = new int[50];
 	index = 0;
 }
 
@@ -19,29 +20,34 @@ void Stos::push(int element)
 {
 	tab[index] = element;
 	index++;
-	tab2 = new int[index+1];
-	for (int i = 0; i < index+1; i++)
+	int *tab2;
+	if (SizeOfStack == index + 1)
 	{
-		tab2[i] = tab[i];
-	}
-	delete[] tab;
-	tab = tab2;
-	
-}
+		SizeOfStack = 2 * SizeOfStack;
+		tab2 = new int[SizeOfStack];
 
-void Stos::pop()
-{
-	
-		index--;
-		tab2 = new int[index+1];
-		for (int i = 0; i < index+1 ; i++)
+		for (int i = 0; i < index + 1; i++)
 		{
 			tab2[i] = tab[i];
 		}
 		delete[] tab;
 		tab = tab2;
-	
+	}
+	else
+	{
+		tab[index] = element;
+	}
+}
 
+int Stos::pop()
+{
+	if (isempty())
+	{
+		cout << "Nie mozna usunac elementu, gdyz stos jest pusty" << endl;
+	}
+	return tab[index--];
+		
+		
 }
 
 bool Stos::isempty()
@@ -53,10 +59,10 @@ bool Stos::isempty()
 
 int Stos::top()
 {
-	return tab[index-1];
+	return tab[index];
 }
 
 int Stos::size()
 {
-	return index;
+	return index+1;
 }

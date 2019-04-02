@@ -30,24 +30,31 @@ void List1d::pushback(int element)
 	else
 	{
 		tail->next = added;
-		tail = added;
+		tail = tail->next;
 	}
 }
 
 void List1d::popback()
 {
-	length--;
-	Nodle *current = new Nodle;
-	Nodle *previous = new Nodle;
-	current = head;
-	while (current->next != nullptr)
+	if (isempty())
 	{
-		previous = current;
-		current = current->next;
+		cout << "pusta";
 	}
-	tail = previous;
-	previous->next = nullptr;
-	delete current;
+	else
+	{
+		length--;
+		Nodle *current = new Nodle;
+		Nodle *previous = new Nodle;
+		current = head;
+		while (current->next != nullptr)
+		{
+			previous = current;
+			current = current->next;
+		}
+		tail = previous;
+		previous->next = nullptr;
+		delete current;
+	}
 }
 
 void List1d::pushfront(int element)
@@ -71,14 +78,15 @@ void List1d::pushfront(int element)
 
 void List1d::popfront()
 {
-	length--;
-	Nodle *temp=new Nodle;
-	if (head == nullptr)
+	
+	if (isempty())
 	{
 		cout << "Lista jest pusta" << endl;
 	}
 	else
 	{
+		length--;
+		Nodle *temp = new Nodle;
 		temp = head;
 		head = head->next;
 		delete temp;
@@ -87,10 +95,14 @@ void List1d::popfront()
 
 bool List1d::isempty()
 {
-	if (head = nullptr)
+	if (length==0)
+	{
 		return true;
+	}
 	else
-	return false;
+	{
+		return false;
+	}
 }
 
 int List1d::size()

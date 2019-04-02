@@ -119,7 +119,7 @@ int main()
 	cout << "stos zaimplementowany" << endl;
 	Stos stos1;
 
-	for (int i = 0; i < m; i++)
+	for (int i = 0; i < 100; i++)
 	{
 		liczba = rand() % 50;
 		stos1.push(liczba);
@@ -144,14 +144,14 @@ int main()
 	cout << "kolejka zaimplementowana" << endl;
 	Kolejka kolejka1;
 
-	for (int i = 0; i < m; i++)
+	for (int i = 0; i < 50; i++)
 	{
 		liczba = rand() % 50;
 		kolejka1.push(liczba);
 	}
 	cout << "pierwszy element kolejki to:" << kolejka1.front() << endl;
 
-	for (int i = 0; i < k; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		if (kolejka1.isempty())
 		{
@@ -162,7 +162,7 @@ int main()
 			kolejka1.pop();
 		}
 	}
-	for (int i = 0; i < m; i++)
+	for (int i = 0; i < 15; i++)
 	{
 		liczba = rand() % 50;
 		kolejka1.push(liczba);
@@ -186,11 +186,11 @@ int main()
 		liczba = rand() % 50;
 		lista1.pushfront(liczba);
 	}
-
 	for (int i = 0; i < l; i++)
 	{
 		lista1.popfront();
 	}
+	
 	cout << "Pierwszy element listy:" << lista1.front() << endl;
 
 	for (int i = 0; i < j; i++)
@@ -239,8 +239,8 @@ int main()
 	cout << "Liczba elementow listy:" << lista2.size() << endl;
 
 	cout << "Kopiec" << endl;
-	int x = 8;
-	Heap kopiec(10);
+	int x = 20;
+	Heap kopiec(20);
 	for (int i = 0; i < x; i++)
 	{
 		liczba = rand() % 50;
@@ -248,7 +248,12 @@ int main()
 	}
 	kopiec.display();
 	kopiec.RemoveRoot();
+	kopiec.RemoveRoot();
 	kopiec.display();
+	kopiec.RemoveRoot();
+	kopiec.RemoveRoot();
+	kopiec.display();
+
 	
 	
 

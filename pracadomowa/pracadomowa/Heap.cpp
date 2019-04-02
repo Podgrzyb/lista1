@@ -56,11 +56,11 @@ void Heap::Heapify(int i)
 	int l = left(i);
 	int r = right(i);
 	int bigger = i;
-	if (tab[l] > tab[i])
+	if (tab[l] > tab[i]&& l<size)
 	{
 		bigger = l;
 	}
-	if (tab[r] > tab[bigger])
+	if (tab[r] > tab[bigger]&&r<size)
 	{
 		bigger = r;
 	}

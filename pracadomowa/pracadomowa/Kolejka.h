@@ -3,14 +3,16 @@ class Kolejka
 {
 private:
 	int *tab;
-	int *tab2;
-	int index;
+	int capacity;
+	int f;
+	int r;
+	int currentSize;
 	
 public:
 	Kolejka();
 	~Kolejka();
 	void push(int element);
-	void pop();
+	int pop();
 	int size();
 	bool isempty();
 	int front();

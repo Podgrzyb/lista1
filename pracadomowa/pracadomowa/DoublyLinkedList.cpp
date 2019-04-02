@@ -37,12 +37,19 @@ void DoublyLinkedList::pushback(int element)
 
 void DoublyLinkedList::popback()
 {
-	length--;
-	DoubleNode *temp = new DoubleNode;
-	temp = tail;
-	tail = tail->prev;
-	tail->next = nullptr;
-	delete temp;
+	if (isempty())
+	{
+		cout << "Lista jest pusta" << endl;
+	}
+	else
+	{
+		length--;
+		DoubleNode *temp = new DoubleNode;
+		temp = tail;
+		tail = tail->prev;
+		tail->next = nullptr;
+		delete temp;
+	}
 }
 
 void DoublyLinkedList::pushfront(int element)
@@ -67,17 +74,24 @@ void DoublyLinkedList::pushfront(int element)
 
 void DoublyLinkedList::popfront()
 {
-	length--;
-	DoubleNode *temp = new DoubleNode;
-	temp = head;
-	head = head->next;
-	head->prev = nullptr;
-	delete temp;
+	if (isempty())
+	{
+		cout << "Lista jest pusta" << endl;
+	}
+	else
+	{
+		length--;
+		DoubleNode *temp = new DoubleNode;
+		temp = head;
+		head = head->next;
+		head->prev = nullptr;
+		delete temp;
+	}
 }
 
 bool DoublyLinkedList::isempty()
 {
-	if (head = nullptr)
+	if (length==0)
 		return true;
 	else
 		return false;
